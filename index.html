@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawLog — 우리 강아지 건강을 가장 먼저 알아채는 앱</title>
+  <meta name="description" content="PawLog는 매일의 산책·배변·식사 기록으로 반려견의 건강 이상을 가장 먼저 알아채는 일상 건강 케어 앱입니다. 날씨 기반 산책 적합도, 룰 기반 건강 조기경보를 제공합니다." />
+  <meta property="og:title" content="PawLog — 반려견 산책·건강 케어 앱" />
+  <meta property="og:description" content="매일 한 번의 기록이, 우리 강아지의 건강 이상을 가장 먼저 알아챕니다." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --blue-1: #1e3a8a;
+      --blue-2: #2563eb;
+      --blue-3: #3b82f6;
+      --ink: #0a1628;
+      --muted: #3a5080;
+      --bg: #eef2f8;
+      --card: #ffffff;
+      --line: #d8e4f4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo",
+        "Noto Sans KR", "Malgun Gothic", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 22px; }
+
+    /* Hero */
+    header.hero {
+      background: linear-gradient(135deg, var(--blue-1) 0%, var(--blue-3) 100%);
+      color: #fff;
+      padding: 96px 0 88px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      margin-bottom: 22px;
+    }
+    .hero h1 { font-size: 56px; font-weight: 800; letter-spacing: -1px; }
+    .hero .paw { font-size: 44px; vertical-align: middle; margin-right: 6px; }
+    .hero p.tag { font-size: 19px; margin-top: 16px; opacity: 0.96; }
+    .hero p.sub { font-size: 15px; margin-top: 10px; opacity: 0.82; }
+
+    /* Sections */
+    section { padding: 64px 0; }
+    h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .lead { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px 22px;
+    }
+    .card .ico { font-size: 30px; }
+    .card h3 { font-size: 17px; font-weight: 700; margin: 14px 0 8px; }
+    .card p { font-size: 14px; color: var(--muted); }
+    .soon { font-size: 12px; color: var(--blue-2); font-weight: 700; }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px 26px;
+    }
+    .panel + .panel { margin-top: 16px; }
+    .panel h3 { font-size: 16px; margin-bottom: 10px; }
+    .panel ul { list-style: none; }
+    .panel li { font-size: 14px; color: var(--muted); padding: 5px 0 5px 20px; position: relative; }
+    .panel li::before { content: "•"; color: var(--blue-2); position: absolute; left: 4px; font-weight: 700; }
+
+    a { color: var(--blue-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 40px 0 56px;
+      border-top: 1px solid var(--line);
+    }
+    footer .mail { font-weight: 600; }
+
+    @media (max-width: 680px) {
+      .hero { padding: 76px 0 64px; }
+      .hero h1 { font-size: 40px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">반려견 일상 건강 케어 · 출시 준비 중</span>
+      <h1><span class="paw">🐾</span>PawLog</h1>
+      <p class="tag">매일 한 번의 기록이, 우리 강아지의 건강 이상을 가장 먼저 알아챕니다.</p>
+      <p class="sub">산책부터 배변·식사까지 — 날씨 기반 산책 케어 + 룰 기반 건강 조기경보</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>주요 기능</h2>
+      <p class="lead">매일 여는 이유(산책)와 계속 쓰는 이유(건강)를 한 앱에 담았습니다.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="ico">🌤️</div>
+          <h3>산책 적합도</h3>
+          <p>기온·체감·강수·바람·미세먼지·자외선과 견종 특성을 반영해 오늘·내일·주말 산책 적합도를 알려드립니다. 폭염·한파·미세먼지 등 특별 날씨도 알림.</p>
+        </div>
+        <div class="card">
+          <div class="ico">❤️</div>
+          <h3>건강 조기경보</h3>
+          <p>배변·식사·음수·체중·구토를 매일 간단히 기록하면, 룰 기반으로 이상 신호를 먼저 알려드립니다. 예방접종·구충 D-day 일정도 함께.</p>
+        </div>
+        <div class="card">
+          <div class="ico">📍</div>
+          <h3>펫플레이스 <span class="soon">예정</span></h3>
+          <p>운동장 평수·바닥재·안전 스펙까지 구조화한 반려동물 동반 시설 검색. 주말 나들이를 위한 깊이 있는 정보를 준비 중입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="panel">
+        <h3>공공데이터 활용</h3>
+        <ul>
+          <li>기상청 단기예보 조회 서비스 (동네예보) — 산책 적합도 계산</li>
+          <li>한국환경공단 에어코리아 대기오염정보 — 미세먼지 반영</li>
+          <li>※ 본 서비스는 위 공공데이터(공공데이터포털 data.go.kr)를 활용합니다.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>개인정보 처리방침 (요약)</h3>
+        <ul>
+          <li>위치 정보는 산책 적합도 계산을 위해 기기에서만 사용되며 서버에 저장하지 않습니다.</li>
+          <li>산책·건강 기록은 기본적으로 사용자 기기(로컬 DB)에만 저장됩니다.</li>
+          <li>건강 조기경보는 수의학적 진단이 아닌 관찰 도우미이며, 이상이 지속되면 병원 방문을 권합니다.</li>
+          <li>문의: 아래 이메일로 연락 주시면 답변드립니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>문의 · <span class="mail">euisuklover@gmail.com</span></p>
+      <p style="margin-top:8px">© 2026 eltacrew · PawLog</p>
+    </div>
+  </footer>
+</body>
+</html>
